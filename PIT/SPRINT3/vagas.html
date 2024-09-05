@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas Disponíveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group button {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .form-group button:hover {
+            background-color: #e67e22;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Localização Atual -->
+        <div id="localizacao-section" class="form-section">
+            <h2>Verificar Vagas Disponíveis</h2>
+            <p id="localizacao"></p>
+            <div class="form-group buttons">
+                <button type="button" onclick="verificarVagas()">Verificar Vagas</button>
+            </div>
+        </div>
+        
+        <!-- Vagas Disponíveis -->
+        <div id="vagas-section" class="form-section hidden">
+            <h2>Vagas Disponíveis</h2>
+            <div class="form-group">
+                <label for="vagas">Selecione uma vaga:</label>
+                <select id="vagas" name="vagas"></select>
+            </div>
+            <div class="form-group buttons">
+                <button type="button" onclick="proximaEtapa()">Escolher Vaga</button>
+            </div>
+        </div>
+        
+        <!-- Localização da Vaga -->
+        <div id="localizacao-vaga-section" class="form-section hidden">
+            <h2>Localização da Vaga</h2>
+            <p id="localizacao-vaga"></p>
+            <div class="form-group buttons">
+                <button type="button" onclick="escolherPagamento()">Escolher Forma de Pagamento</button>
+            </div>
+        </div>
+
+        <!-- Forma de Pagamento -->
+        <div id="pagamento-section" class="form-section hidden">
+            <h2>Forma de Pagamento</h2>
+            <div class="form-group">
+                <label for="pagamento">Selecione a forma de pagamento:</label>
+                <select id="pagamento" name="pagamento">
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
+                    <option value="boleto">Boleto Bancário</option>
+                </select>
+            </div>
+            <div class="form-group buttons">
+                <button type="button" onclick="aplicarVaga()">Aplicar para Vaga</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Exemplo de vagas disponíveis por coordenadas (lat, long)
+        const vagasDisponiveis = [
+            { id: "Vaga 1", lat: -19.9208, long: -43.9378, rua: "Rua A" }, // Coordenadas de exemplo
+            { id: "Vaga 2", lat: -19.9210, long: -43.9380, rua: "Rua A" },
+            { id: "Vaga 3", lat: -19.9220, long: -43.9370, rua: "Rua B" },
+            { id: "Vaga 4", lat: -19.9230, long: -43.9390, rua: "Rua C" }
+        ];
+
+        function verificarVagas() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const long = position.coords.longitude;
+                    const vagasSelect = document.getElementById('vagas');
+
+                    // Exibe a localização atual
+                    document.getElementById('localizacao').textContent = `Sua localização atual: Latitude: ${lat}, Longitude: ${long}`;
+
+                    // Filtra as vagas disponíveis com base na localização atual
+                    const vagasProximas = vagasDisponiveis.filter(vaga => {
+                        // Aqui, você pode ajustar a lógica de proximidade
+                        // Por exemplo, vagas a menos de 0.01 graus de distância
+                        return Math.abs(vaga.lat - lat) < 0.01 && Math.abs(vaga.long - long) < 0.01;
+                    });
+
+                    if (vagasProximas.length > 0) {
+                        vagasSelect.innerHTML = "";
+                        vagasProximas.forEach(vaga => {
+                            const option = document.createElement('option');
+                            option.value = vaga.id;
+                            option.textContent = `${vaga.id} - ${vaga.rua}`;
+                            vagasSelect.appendChild(option);
+                        });
+
+                        document.getElementById('localizacao-section').classList.add('hidden');
+                        document.getElementById('vagas-section').classList.remove('hidden');
+                    } else {
+                        alert('Nenhuma vaga disponível próxima à sua localização.');
+                    }
+                }, () => {
+                    alert('Não foi possível obter sua localização.');
+                });
+            } else {
+                alert('Geolocalização não é suportada pelo seu navegador.');
+            }
+        }
+
+        function proximaEtapa() {
+            const vagaSelecionada = document.getElementById('vagas').value;
+            if (vagaSelecionada) {
+                const vaga = vagasDisponiveis.find(v => v.id === vagaSelecionada);
+                document.getElementById('vagas-section').classList.add('hidden');
+                document.getElementById('localizacao-vaga-section').classList.remove('hidden');
+                document.getElementById('localizacao-vaga').textContent = `Localização da ${vaga.id}: Rua ${vaga.rua}`;
+            } else {
+                alert('Por favor, selecione uma vaga.');
+            }
+        }
+
+        function escolherPagamento() {
+            document.getElementById('localizacao-vaga-section').classList.add('hidden');
+            document.getElementById('pagamento-section').classList.remove('hidden');
+        }
+
+        function aplicarVaga() {
+            const formaPagamento = document.getElementById('pagamento').value;
+            alert('Você aplicou para a vaga com a forma de pagamento: ' + formaPagamento);
+            // Aqui você pode adicionar o código para processar a aplicação da vaga
+        }
+    </script>
+</body>
+</html>

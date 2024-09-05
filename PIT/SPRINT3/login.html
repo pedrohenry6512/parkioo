@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Parkio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFA500; /* Laranja */
+            color: white; /* Branco */
+            text-align: center;
+            background-image: url('Home.png');
+            background-repeat: no-repeat;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                background-image: none; /* Esconde a imagem em telas menores que 600px */
+            }
+        }
+
+        form {
+            max-width: 300px;
+            min-height: 707px;
+            margin: 50px auto;
+            padding: 50px;
+            background-color: #FFA500; /* Laranja */
+            border-radius: 10px;
+            border: 2px solid #FFA500; /* Borda laranja */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Preto com transparência */
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #fcfbfb; /* Branco */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .form-buttons button {
+            background-color: #383bec; /* Azul */
+            color: #FFFFFF; /* Branco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0; /* Remove margens extras */
+        }
+
+        .form-buttons button:hover {
+            background-color: #FFA500; /* Laranja ao passar o mouse */
+        }
+
+        .form-buttons button + button {
+            margin-left: 10px; /* Espaço entre os botões */
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm" action="dados.html" method="post"> <!-- Correção no action -->
+        <h2>Login</h2>
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="nome" required> <!-- Adicionando o atributo required -->
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required> <!-- Adicionando o atributo required -->
+
+        <div class="form-buttons">
+            <button type="submit">Entrar</button> <!-- Remoção do link e ajuste do botão -->
+            <button type="button" onclick="window.location.href='index.html'">Voltar</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -18,34 +18,35 @@
             text-align: center;
         }
         .container {
+            display: flex;
             width: 80%;
             margin: auto;
-            overflow: hidden;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-top: 30px;
+            overflow: hidden;
         }
         .contact-info {
             width: 45%;
+            padding: 30px;
+           
+            border-radius: 10px;
+            margin-right: 5%;
         }
         .contact-info h2 {
             color: #FF6F00; /* Laranja */
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 50px; /* Tamanho aumentado */
         }
         .contact-info p {
-            font-size: 16px;
+            font-size: 20px; /* Tamanho aumentado */
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         .form-container {
-            width: 45%;
+            width: 50%;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .form-container h2 {
             color: #FF6F00; /* Laranja */
@@ -102,35 +103,31 @@
 </header>
 
 <div class="container">
-    <div class="content">
-        <div class="contact-info">
-            <h2>Informações de Contato</h2>
-            <p><strong>Endereço:</strong> Rua Marataízes, n° 72, Bairro Everest (Justinópolis) - Ribeirão das Neves/MG</p>
-            <p><strong>Telefone:</strong> (31) 3198-931-3033 / 98901-7931</p>
-            <p><strong>E-mail:</strong> henrique.zhavai@gmail.com</p>
-        </div>
-        
-        <div class="form-container">
-            <h2>Fale Conosco</h2>
-            <form id="contactForm">
-                <label for="name">Nome Completo:</label>
-                <input type="text" id="name" name="name" required>
+    <div class="contact-info">
+        <h2>Ficou com Dúvidas?</h2>
+        <p>Estamos aqui para ajudar! Com Parkio, sua vida fica muito mais fácil.</p>
+    </div>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+    <div class="form-container">
+        <h2>Fale Conosco</h2>
+        <form id="contactForm">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" required>
 
-                <label for="phone">Telefone:</label>
-                <input type="tel" id="phone" name="phone">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-                <label for="subject">Assunto:</label>
-                <input type="text" id="subject" name="subject" required>
+            <label for="phone">Telefone:</label>
+            <input type="tel" id="phone" name="phone">
 
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="subject">Assunto:</label>
+            <input type="text" id="subject" name="subject" required>
 
-                <a href="dados.html"></a><button type="submit">Enviar</button>
-            </form>
-        </div>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 </div>
 

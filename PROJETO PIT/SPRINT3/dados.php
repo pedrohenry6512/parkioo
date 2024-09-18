@@ -92,6 +92,7 @@ $result = $conn->query($sql);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100px;
         }
 
         nav ul {
@@ -233,8 +234,9 @@ $result = $conn->query($sql);
         }
 
         li {
-            background: #007BFF;;
-           
+            background: #007BFF;
+            ;
+
             border-radius: 4px;
             padding: 10px;
             margin-bottom: 10px;
@@ -266,73 +268,95 @@ $result = $conn->query($sql);
             text-align: center;
             /* Centraliza o título e o contêiner de texto */
         }
- 
 
-.title {
-  font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
-  font-size: 36px; /* Ajuste o tamanho da fonte conforme necessário */
-  font-weight: 700; /* Define o peso da fonte (negrito) */
-  color: #333; /* Cor do texto */
-  margin-bottom: 20px; /* Espaçamento entre o título e o contêiner de texto */
-}
 
-.text-container {
-  display: flex;
-  gap: 20px; /* Espaçamento entre os botões */
-  justify-content: center; /* Alinha os botões no centro da div */
-  flex-wrap: wrap; /* Permite que os botões se movam para a linha seguinte se necessário */
-}
+        .title {
+            font-family: 'Roboto', sans-serif;
+            /* Usando a fonte Roboto */
+            font-size: 36px;
+            /* Ajuste o tamanho da fonte conforme necessário */
+            font-weight: 700;
+            /* Define o peso da fonte (negrito) */
+            color: #333;
+            /* Cor do texto */
+            margin-bottom: 20px;
+            /* Espaçamento entre o título e o contêiner de texto */
+        }
 
-.text-box {
-  width: 300px; /* Ajuste o tamanho dos botões conforme necessário */
-  padding: 15px; /* Adiciona algum preenchimento interno */
-  border: 2px solid #ccc; /* Borda cinza */
-  border-radius: 8px; /* Adiciona bordas arredondadas */
-  background-color: transparent; /* Fundo transparente */
-  color: #333; /* Cor do texto */
-  font-family: 'Arial', sans-serif; /* Fonte do texto dos botões */
-  cursor: pointer; /* Adiciona o cursor de ponteiro ao passar sobre o botão */
-  text-align: center; /* Centraliza o texto dentro dos botões */
-  box-shadow: none; /* Remove a sombra para um estilo mais limpo */
-  transition: background-color 0.3s; /* Adiciona um efeito de transição suave */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+        .text-container {
+            display: flex;
+            gap: 20px;
+            /* Espaçamento entre os botões */
+            justify-content: center;
+            /* Alinha os botões no centro da div */
+            flex-wrap: wrap;
+            /* Permite que os botões se movam para a linha seguinte se necessário */
+        }
 
-.text-box:hover {
-  background-color: transparent; /* Mantém o fundo transparente ao passar o mouse */
-}
+        .text-box {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            /* Remove o sublinhado do link */
+            color: #007BFF;
+            /* Cor do texto */
+            border-radius: 5px;
+            /* Cantos arredondados */
+            transition: background-color 0.3s ease;
+            /* Efeito ao passar o mouse */
+        }
 
-.main-text {
-  font-family: 'Roboto', sans-serif; /* Fonte mais forte para o texto principal */
-  font-size: 18px; /* Tamanho da fonte para o texto principal */
-  font-weight: 700; /* Peso da fonte para o texto principal */
-  color: #007BFF; /* Cor do texto principal */
-}
+        .text-box:hover {
+            background-color: #e0e0e0;
+            /* Cor do fundo ao passar o mouse */
+        }
 
-.sub-text {
-  font-family: 'Arial', sans-serif; /* Fonte normal para o texto secundário */
-  font-size: 14px; /* Tamanho da fonte para o texto secundário */
-  font-weight: 400; /* Peso da fonte para o texto secundário */
-  color: #333; /* Cor do texto secundário */
-}
-.footer {
-    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco transparente */
-    color: #333; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    font-family: 'Arial', sans-serif; /* Fonte do texto */
-    font-size: 14px; /* Tamanho da fonte */
-    border-top: 1px solid #ccc; /* Borda superior cinza clara */
-    position: relative; /* Garante que o rodapé fique no final da página */
-    bottom: 0;
-    width: 100%; /* Largura total */
+        .main-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            color: black;
+        }
+
+        .footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Fundo branco transparente */
+    color: #333;
+    /* Cor do texto */
+    padding: 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    font-family: 'Arial', sans-serif;
+    /* Fonte do texto */
+    font-size: 14px;
+    /* Tamanho da fonte */
+    border-top: 1px solid #ccc;
+    /* Borda superior cinza clara */
+    width: 100%;
+    /* Garante que o rodapé ocupe toda a largura */
+    box-sizing: border-box;
+    /* Garante que o padding e a borda sejam incluídos na largura total */
+    position: relative;
+    /* Garante que o rodapé seja relativo aos outros elementos */
 }
 
 .footer p {
-    margin: 10px 0; /* Espaçamento entre os parágrafos */
+    margin-top: 40px; /* Move o parágrafo mais para baixo */
+    margin-bottom: 0; /* Remove qualquer margem inferior, se necessário */
+}
+
+.footer img {
+    margin-top: 20px; /* Espaço acima da imagem */
+    display: block;   /* Faz com que a imagem seja um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
 }
 
     </style>
@@ -346,7 +370,8 @@ $result = $conn->query($sql);
         <nav>
             <ul>
                 <li><a href="./index.html">Página inicial</a></li>
-                <a href="minhaconta.php"></a><li><a href="./">Minha Conta</a></li>
+                <a href="minhaconta.php"></a>
+                <li><a href="./">Minha Conta</a></li>
                 <li><a href="./contato.php">Contato</a></li>
             </ul>
         </nav>
@@ -358,13 +383,13 @@ $result = $conn->query($sql);
         </h1>
 
         <div class="jobs-wrap">
-    <?php
-    $hasResults = false;
-    foreach ($jobs as $job) {
-        $jobTitle = strtolower($job['title']);
-        $jobLocation = strtolower($job['location']);
-        if (strpos($jobTitle, $searchValue) !== false || strpos($jobLocation, $searchValue) !== false) {
-            echo '
+            <?php
+            $hasResults = false;
+            foreach ($jobs as $job) {
+                $jobTitle = strtolower($job['title']);
+                $jobLocation = strtolower($job['location']);
+                if (strpos($jobTitle, $searchValue) !== false || strpos($jobLocation, $searchValue) !== false) {
+                    echo '
             <div class="job-item">
                 <div class="company-logo">
                     <img src="./localizaçao.png" alt="Logo">
@@ -376,80 +401,47 @@ $result = $conn->query($sql);
                 <button class="buy-button" onclick="window.location.href=\'formulario_pagamento.php\';">Comprar</button>
             </div>
             ';
-            $hasResults = true;
-        }
-    }
-    ?>
-</div>
-
-
-        </div>
-
-        <div class="text-container">
-            <h1 class="title">Olá, acompanhe seus benefícios:</h1>
-            <button class="text-box">
-                <span class="main-text">Plano de saúde e benefício empresa</span><br>
-                <span class="sub-text">Plano de saúde e benefício empresa</span>
-            </button>
-            
-            <button class="text-box">
-                <span class="main-text">Cupons!</span><br>
-                <span class="sub-text">Cupons incríveis para economizar ainda mais!</span>
-            </button>
-        
-            <button class="text-box">
-                <span class="main-text">Ganhe Pontos</span><br>
-                <span class="sub-text">Cupons incríveis para economizar ainda mais!</span>
-            </button>
-           
-   
-
-
-
-
-
-        <div class="container">
-            <h1>Adicionar Comentário</h1>
-            <form method="post" action="">
-                <input type="text" name="nome" placeholder="Seu nome" required><br>
-                <textarea name="comentario" rows="4" cols="50" required placeholder="Seu comentário"></textarea><br>
-                <input type="submit" value="Enviar Comentário">
-            </form>
-
-            <h2>Comentários</h2>
-            <ul>
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<li>
-                            <strong>' . htmlspecialchars($row['nome']) . ':</strong> ' . htmlspecialchars($row['comentario']) . '
-                            <a href="?delete_id=' . $row['id'] . '" class="button-delete">Deletar</a>
-                        </li>';
-                    }
-                } else {
-                    echo '<li>Sem comentários ainda.</li>';
+                    $hasResults = true;
                 }
-                ?>
-            </ul>
+            }
+            ?>
         </div>
+
+
     </div>
-    <div class="footer">
-    <p>
-        A [Parkio] segue as determinações da Lei de Proteção de Dados e garante a segurança e a privacidade dos seus dados.
-    </p>
-    <p>
-        [Parkiio] | CNPJ: [00.000.000/0000-00] | Endereço: [Rua Exemplo, 123] | Cidade - [Estado] | CEP [00000-000] | Para dúvidas e informações, entre em contato conosco através do nosso atendimento online.
-    </p>
-    <p>
-        O estacionamento está disponível para todos os clientes durante o horário de funcionamento. Por favor, consulte as regras de uso no local.
-    </p>
-    <p>
-        Política de privacidade | © 2024 [Nome da Empresa]. Todos os direitos reservados.
-    </p>
-</div>
+    <div class="text-container">
+        <h1 class="title">Olá, acompanhe seus benefícios:</h1>
+
+        <a href="plano_saude.php" class="text-box">
+            <span class="main-text">Plano de saúde e benefício empresa</span><br>
+            <span class="sub-text">Plano de saúde e benefício empresa</span>
+        </a>
+
+        <a href="cupons.php" class="text-box">
+            <span class="main-text">Cupons!</span><br>
+            <span class="sub-text">Cupons incríveis para economizar ainda mais!</span>
+        </a>
+
+        <a href="ganhe_pontos.php" class="text-box">
+            <span class="main-text">Ganhe Pontos</span><br>
+            <span class="sub-text">Cupons incríveis para economizar ainda mais!</span>
+        </a>
+    </div>
 
 
-    <?php $conn->close(); ?>
+    <footer class="footer">
+        <p>&copy; 2024 Emprego. Todos os direitos reservados. <a href="#">Política de Privacidade</a></p>
+    </footer>
+</body>
+
+</html>
+
+<?php
+// Fecha a conexão
+$conn->close();
+?>
+
+
 </body>
 
 </html>

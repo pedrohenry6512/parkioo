@@ -1,7 +1,7 @@
 <?php
 // Definições de variáveis
 $logoPath = 'logo.png';
-$qrcodePath = 'qrcode.png';
+$qrcodePath = '50.png';
 $pixCode = '00020101021126450014br.gov.bcb.pix0123pedro12042006@gmail.com52040000530398654045.005802BR5918PEDRO H V DE PAULA6013RIBEIRAO DAS 62070503***630401CC';
 $pixKey = 'api.pagseguro.com/pix/v2/0E42A47B-D782-473A-8A8E-261C0992412D';
 $amount = 'R$ 50,00';

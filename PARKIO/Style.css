@@ -1,0 +1,163 @@
+-- avaliar.php
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #004d99;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #ff6f00;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    background-color: #004d99;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.image-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+---- sprit8
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+------ sprit9
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+h1 {
+    color: #ff6600; 
+    text-align: center;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+th {
+    background-color: #1e3c72; 
+    color: #fff;
+}
+td {
+    background-color: #f9f9f9;
+}
+.button-container {
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    background-color: #ff6600; /* Laranja */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #e55d00;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Vagas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background-color: #ff6600; /* Azul */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        /* Menu Lateral */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ff6600; /* Laranja */
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.2s;
+        }
+        .sidebar a:hover {
+            background-color: #ff6600; /* Azul ao passar o mouse */
+        }
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        /* Botão de Abrir o Menu */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color:  #ff6600; /* Azul */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        .main-content {
+            margin-left: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Minha Conta</h1>
+</header>
+
+<!-- Botão para abrir o menu -->
+<button class="openbtn" onclick="openNav()">☰ Tarefas</button>
+
+<!-- Menu Lateral -->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="historico_devaga.html">Histórico de Vagas</a>
+    
+    <a href="meus_dados.html">Meus Dados</a>
+    <a href="avaliaçao.html">Avaliação</a>
+</div>
+
+<!-- Conteúdo Principal -->
+<div class="main-content">
+    <section id="historico">
+        <h2>Histórico de Vagas</h2>
+        <p>Visualize todas as vagas que você já comprou ou utilizou.</p>
+    </section>
+
+
+    <section id="cancelamento">
+        <h2>Cancelamento de Vagas</h2>
+        <p>Cancele vagas que você não irá mais utilizar.</p>
+    </section>
+
+    <section id="avaliacao">
+        <h2>Avaliação</h2>
+        <p>Deixe uma avaliação sobre os serviços de estacionamento.</p>
+    </section>
+</div>
+
+<script>
+    /* Função para abrir o menu */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+    /* Função para fechar o menu */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
+
+</body>
+</html>

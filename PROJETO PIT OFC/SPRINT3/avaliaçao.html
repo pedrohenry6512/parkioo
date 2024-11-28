@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avalie Nosso Site</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background-image: url('../assets/Home2.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+     margin-left: 400px;
+      background-color: #ffffff;
+     
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 40px;
+      color: #ccc;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: #ffa500;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+      resize: none;
+    }
+
+    .submit-button {
+      background-color: #ff6f00;
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #e65c00;
+    }
+
+    .share-container {
+      margin-top: 30px;
+    }
+
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .share-buttons a {
+      background-color: #1da1f2;
+      color: white;
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .share-buttons a:hover {
+      background-color: #0d95e8;
+    }
+
+    .share-buttons i {
+      margin-right: 10px;
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Avalie Nosso Site</h1>
+    <p class="description">Sua opinião é muito importante para nós. Por favor, avalie sua experiência com nosso site.</p>
+
+    <!-- Formulário de Avaliação -->
+    <form action="sucesso.php">
+      <div class="form-group">
+        <label for="rating">Classificação</label>
+        <div class="stars">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1">★</label>
+        </div>
+      </div>
+
+      
+
+      <button type="submit" class="submit-button">Enviar Avaliação</button>
+    </form>
+
+    <!-- Compartilhar -->
+    <div class="share-container">
+      <p class="description">Compartilhe nosso site com seus amigos:</p>
+      <div class="share-buttons">
+        <a href="https://twitter.com/share?url=SEU_URL_AQUI" target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=SEU_URL_AQUI" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://wa.me/?text=SEU_URL_AQUI" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Importando ícones FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
